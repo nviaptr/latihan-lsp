@@ -264,7 +264,20 @@ alert("Read message 0: " + readMessages.has(messages[0]));
 messages.shift();
 
 // objek.kunci, nilai, entri
+let user = {
+  name: "Pia",
+  age: 17
+};
+
 // destrukturisasi penugasan
+let user = {
+  name: "Pia",
+  age: 17
+};
+let { years: age, isAdmin = false} = user;
+alert(age);
+alert(isAdmin);
+
 // tanggal dan waktu
 // metode JSON, toJSON
 // rekursi dan tumpukan
