@@ -1,3 +1,4 @@
+// variabel
 let admin, nama; // bisa mendeklarasikan dua variabel sekaligus
     nama = "Pia";
     admin = nama;
@@ -108,6 +109,177 @@ if (n <= 0) {+
 } else {
   alert( pow(x, n) );
 }
+
+// komentar
+addWhiskey(glass);
+addJuice(glass);
+
+function addWhiskey(container) {
+  for(let i = 0; i < 10; i++) {
+    let drop = getWhiskey();
+  }
+}
+
+function addJuice(container) {
+  for(let t = 0; t < 3; t++) {
+    let tomato = getTomato();
+  }
+}
+
+// kode ninja
+function ninjaFunction(elem) {
+  // 20 baris kode berjalan dengan elem
+  elem = clone(elem);
+  // 20 baris lagi, sekarang berjalan dengan clone dari elem!
+}
+
+// pengetesan terotomasi dengan mocha
+describe("Raises x to power n", function() {
+  it("5 in the power of 1 equals 5", function() {
+    assert.equal(pow(5, 1), 5);
+  });
+
+  it("5 in the power of 2 equals 25", function() {
+    assert.equal(pow(5, 2), 25);
+  });
+
+  it("5 in the power of 3 equals 125", function() {
+    assert.equal(pow(5, 3), 125);
+  });
+})
+
+// polyfill dan transpiler
+if (!Math.trunc) {
+  // kalo gaada fungsi seperti ini implementasikan
+  Math.trunc = function(number) {
+    return number < 0 ? Math.ceil(number) : Math.floor(number);
+  };
+}
+
+// objek
+let user = {};
+user.name = "Novia";
+user.surname = "Putri";
+user.name = "Nabila";
+delete user.name;
+
+// referensi objek dan menyalinnya
+const user = {
+  name: "Novia"
+};
+user.name = "Nabila";
+alert(user.name);
+
+// pengumpulan sampah
+function marry(man, woman) {
+  woman.husband = man;
+  man.wife = woman;
+  return {
+    father: man,
+    mother: woman
+  }
+}
+let family = marry({
+  name: "Novia"
+}, {
+  name: "Putri"
+});
+
+// metode objek 'this'
+function makeUser() {
+  return {
+    name: "Novia",
+    ref: this
+  };
+}
+let user = makeUser();
+alert(user.ref.name);
+
+// konstruktor, operator "new"
+let obj = {};
+function A() { return obj; }
+function B() { return obj; }
+alert(new A() == new B() );
+
+// optional chaining '?'
+let user = null;
+alert(user?.address);
+alert(user?.address.street);
+
+// tipe simbol
+let id2 = Symbol("id");
+let user = {
+  name: "Novia",
+  [id]: 345
+};
+
+// menolak konversi primitif
+waspada (obj);
+lainObj[obj] = 345;
+
+// metode primitif
+let string = "Hello";
+string.test = 5;
+alert(string.test);
+
+// angka
+let a = +prompt("The first number?", "");
+let b = +prompt("The second number", "");
+alert( a + b );
+
+// string
+let newStr = str[0].toUpperCase() + str.slice(1);
+
+// array
+let animal = ["Cat", "Dog", "Bird"];
+
+// metode array
+let arr = ["I", "go", "home"];
+delete arr[1];
+alert( arr[1] );
+alert( arr.length );
+
+// iterables atau bisa di iterasi
+let range = {
+  from: 1,
+  to: 5
+};
+
+// map dan set
+map.set('1', 'str1')
+   .set(1, 'num1')
+   .set(true, 'bool1');
+
+// weakmap dan weakset
+let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
+let readMessages = new WeakSet();
+//dua pesan telah dibaca
+readMessages.add(messages[0]);
+readMessages.add(messages[1]);
+alert("Read message 0: " + readMessages.has(messages[0]));
+messages.shift();
+
+// objek.kunci, nilai, entri
+// destrukturisasi penugasan
+// tanggal dan waktu
+// metode JSON, toJSON
+// rekursi dan tumpukan
+// parameter rest dan sintaks spread
+// lingkup variabel
+// si tua "var"
+// objek global
+// objek fungsi 
+// sintaks "new function"
+// pendadwalan 
+// decorators dan forwading
+// function binding
+// membahas kembali fungsi arrow
+// properti flag dan deskriptor
+// properti getter dan setter
 
 
 
