@@ -279,20 +279,132 @@ alert(age);
 alert(isAdmin);
 
 // tanggal dan waktu
+let d2 = new Date("February 20, 2012 03:12:00");
+alert( d2 );
+
 // metode JSON, toJSON
+let user = {
+  name: "John Smith",
+  age: 35
+};
+let user2 = JSON.parse(JSON.stringify(user));
+
 // rekursi dan tumpukan
+function sumTo(n) {
+  return n * (n + 1) / 2;
+}
+alert( sumTo(100) );
+
 // parameter rest dan sintaks spread
+function sum(a, b) {
+  return a + b;
+}
+alert( sum(1, 2, 3, 4, 5) );
+
 // lingkup variabel
+{
+  // tampilkan pesan
+  let message = "Hello";
+  alert(message);
+}
+{
+  // tampilkan pesan lain
+  let message = "Goodbye";
+  alert(message);
+}
+
 // si tua "var"
+var message = "Hi";
+alert(message); // Hi
+
 // objek global
+alert("Hello");
+// sama saja dengan
+window.alert("Hello");
+
 // objek fungsi 
+function sayHi() {
+  alert("Hi");
+}
+alert(sayHi.name); // sayHi
+
 // sintaks "new function"
+let sum = new Function('a', 'b', 'return a + b');
+alert( sum(1, 2) ); // 3
+
 // pendadwalan 
+function printNumbers(from, to) {
+  let current = from;
+  function go() {
+    alert(current);
+    if (current == to) {
+      clearInterval(timerId);
+    }
+    current++;
+  }
+  go();
+  let timerId = setInterval(go, 1000);
+}
+printNumbers(5, 10);
+
 // decorators dan forwading
+function spy(func) {
+  function wrapper(...args) {
+    // gunakan ...args daripada argumen untuk menyimpan "array asli" didalam wrapper.calls
+    wrapper.calls.push(args);
+    return func.apply(this, args);
+  }
+  wrapper.calls = [];
+  return wrapper;
+}
+
 // function binding
+let user = {
+  firstName: "John",
+  sayHi() {
+    alert(`Hello, ${this.firstName}!`);
+  }
+};
+setTimeout(user.sayHi, 1000); // Hello, undefined!
+
 // membahas kembali fungsi arrow
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+  showList() {
+    this.students.forEach(
+      student => alert(this.title + ': ' + student)
+    );
+  }
+};
+group.showList();
+
 // properti flag dan deskriptor
+let user = {
+  name: "John"
+};
+Object.defineProperty(user, "name", {
+  configurable: false
+});
+user.name = "Pete"; // works fine
+delete user.name; // Error
+
 // properti getter dan setter
+let user = {
+  get name() {
+    return this._name;
+  },
 
+  set name(value) {
+    if (value.length < 4) {
+      alert("Name is too short, need at least 4 characters");
+      return;
+    }
+    this._name = value;
+  }
+};
 
+user.name = "Pete";
+alert(user.name); // Pete
 
+user.name = ""; // Name is too short...
